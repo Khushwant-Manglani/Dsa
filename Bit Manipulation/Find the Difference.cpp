@@ -5,8 +5,7 @@ public:
             t[i+1] += t[i] - s[i]; //we'll put the diff of t[i] and s[i] in t[i+1]
         }
         return t[t.size() - 1]; // So at last diff will com in last element it is ans
-        
-        
+       
         
         /*int n = s.length();
         int m = t.length();
@@ -16,5 +15,15 @@ public:
             if(j < m) res ^= t[i];
         }
         return res;*/
+        
+        /*unordered_map<int,int> freq;
+        for(auto x : s) freq[x]++; 
+        for(auto a : t){ 
+            if(freq[a] > 0){
+                freq[a]--; 
+            }    
+            else return a;        
+        }        
+        return '0';*/
     }
 };
