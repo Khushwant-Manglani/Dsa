@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isPowerOfFour(int n) {
+    bool isPowerOfFour(int n) {    
         //(n & 0x55555555) gives the 1 is located at odd posn in n
         return (n > 0 && (n & n-1) == 0 && (n & 0x55555555) == n);
         
@@ -15,10 +15,17 @@ public:
         return false;*/
         
         
-        /*while(n > 0 && n % 4 == 0){
-            n /= 4;
+        /*while(n > 0 && n % 4 == 0) n /= 4;
+        return n == 1;*/
+        
+        /*int ans = 1;
+        for(int i=0 ; i<16 ; i++){
+            if(ans == n) return true;
+            if(ans < INT_MAX/4)
+            ans *= 4;
         }
-        if(n == 1) return true;
         return false;*/
+        
+        //return (n > 0 && (n & n-1) == 0 && (n - 1) % 3 == 0);
     }
 };
